@@ -21,12 +21,13 @@ namespace Service.Service
         {
             employeeRepository = new EmployeeRepository(context);
         }
-        public int CreateEmploye(Empleado empleado)
+        public int CreateEmployee(Empleado empleado)
         {
+
             int success = 0;
             try
             {
-                success = employeeRepository.Create(empleado);
+                success = employeeRepository.CreateEmployee(empleado);
             }
             catch (Exception e)
             {
@@ -50,6 +51,46 @@ namespace Service.Service
             }
 
             return empleados;
+        }
+
+        public void UpdateEmployee(Empleado empleado)
+        {
+            try
+            {
+                employeeRepository.UpdateEmployee(empleado);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+            }
+        }
+
+        public void DeleteEmploye(int id)
+        {
+            try
+            {
+                employeeRepository.DeleteEmployee(id);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+            }
+        }
+
+        public Empleado FindById(int id)
+        {
+            Empleado empleado = null;
+
+            try
+            {
+                empleado = employeeRepository.FindByIdEmployee(id);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError(e.Message);
+            }
+
+            return empleado;
         }
 
     }

@@ -23,7 +23,7 @@ namespace soa_web.Controllers
         { 
             return View();
         }
-
+        [HttpPost]
         public IActionResult Create(Empleado empleado) 
         {
             var result = _employeeService.CreateEmploye( empleado);
@@ -37,6 +37,11 @@ namespace soa_web.Controllers
             {
                 return View(result);
             }
+        }
+        public IActionResult Edit(int id)
+        {
+            var employee= _employeeService.FindById(id)
+
         }
     }
 }

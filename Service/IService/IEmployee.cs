@@ -10,6 +10,9 @@ namespace Service.IService
     public interface IEmployee
     {
         List<Empleado> GetEmployees();
-        int CreateEmploye(Empleado empleado);
+        int CreateEmployee(Empleado empleado);
+        void UpdateEmployee(Empleado empleado);
+        void DeleteEmployee(int id);
+        Empleado FindById(int id);
     }
 }

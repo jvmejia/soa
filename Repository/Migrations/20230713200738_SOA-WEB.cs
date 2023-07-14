@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Repository.Migrations
 {
-    public partial class Inity : Migration
+    public partial class SOAWEB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,6 +35,7 @@ namespace Repository.Migrations
                     CURP = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     FechaNacimiento = table.Column<DateTime>(type: "date", nullable: false),
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    clave = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NumEmpleado = table.Column<int>(type: "int", nullable: true),
                     FechaIngresoEmpresa = table.Column<DateTime>(type: "date", nullable: true),

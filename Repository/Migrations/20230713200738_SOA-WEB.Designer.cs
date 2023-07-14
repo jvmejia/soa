@@ -12,8 +12,8 @@ using Repository.DBContext;
 namespace Repository.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20230706011558_Inity")]
-    partial class Inity
+    [Migration("20230713200738_SOA-WEB")]
+    partial class SOAWEB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,6 +114,11 @@ namespace Repository.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("clave")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id_Persona");
 
